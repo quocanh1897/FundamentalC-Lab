@@ -44,7 +44,7 @@ int main() {
 		 
 		}
 		exit = 1;
-	} while (exit = 0);
+	} while (exit == 0);
 	
 	system("pause");
 }

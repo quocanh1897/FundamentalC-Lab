@@ -6,6 +6,10 @@ int main() {
 	
 	cout << "Nhap vao bac cua da thuc: "; cin >> n;
 	cout << "Nhap x: "; cin >> x;
+	while (!cin.good())	{
+		cin.clear(); cin.ignore(1000, '\n');
+		cout << "Nhap sai, nhap lai: "; cin >> x;
+	}
 	vector<int> a(n + 1);
 	for (int i = 0; i <= n; i++) {
 		cout << "Nhap he so x^" << i << ": "; cin >> a[i];

@@ -1,30 +1,24 @@
 #include <string>
-#include <sstream>
 #include <iostream>
 using namespace std;
-int main() {
-
-	string input; stringstream ss;
-	int n; bool sai = 0;
-	cout << "Nhap n nguyen duong: "; getline(cin, input);
-A:
-	for (char c : input) {
-		if (!(c >= '0'&&c <= '9')) {
-			sai = 1; break;
+int main(){
+	string N;
+	int b = 0, a = 0, c = 0;
+	cout << "Nhap n nguyen duong: ";
+	getline(cin, N);
+	do	{
+		b = c; a = N.size();
+		while (N[0] == 32) N.erase(0, 1);
+		
+		for (int j = 0; j < a; j++) {
+			if (48 <= N[j] && N[j] <= 57 || N[a-1]==32) b++;
 		}
-		else sai = 0;
-	}
-	ss << input; ss >> n;
-	while (n <= 0 || sai) {
-		while (!(cin.good())) {
-			cin.clear(); cin.ignore(1000, '\n');
+		if (b != a)	{
+			cout << "Nhap lai N:";
+			getline(cin, N);
 		}
-		cout << "Nhap sai, nhap lai: "; cin >> input; goto A;
-	}
-	cout << "so vua nhap: " << input << endl;
-
-
+	} while (b != a);
+	cout << N << endl ;
 	system("pause");
-
-
+	
 }
